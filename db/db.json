@@ -1,0 +1,14 @@
+{
+  "user": [
+    {
+      "nameSurname": "ysk",
+      "passsword": "123456",
+      "id": 1
+    },
+    {
+      "nameSurname": "ysk",
+      "password": "123456",
+      "id": 2
+    }
+  ]
+}
