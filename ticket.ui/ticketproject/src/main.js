@@ -24,14 +24,16 @@ import Toast from 'primevue/toast';
 import Dropdown from 'primevue/dropdown';
 import Password from "primevue/password";
 import Textarea from 'primevue/textarea';
-
-
-
+import Card from 'primevue/card';
+import Chart from 'primevue/chart';
+import ConfirmDialog from "primevue/confirmdialog";
+import ConfirmationService from "primevue/confirmationservice";
 
 const app = createApp(App);
 app.use(router).mount('#app');
 app.use(PrimeVue);
 app.use(ToastService);
+app.use(ConfirmationService);
 app.component('TabView', TabView);
 app.component('PvButton', Button);
 app.component('InputText', InputText);
@@ -46,3 +48,6 @@ app.component('PvToast',Toast)
 app.component('PvDropdown',Dropdown)
 app.component('PvPassword',Password)
 app.component('PvTextarea',Textarea)
+app.component('PvCard',Card)
+app.component('PvChart',Chart)
+app.component('PvConfirmDialog',ConfirmDialog)

@@ -1,5 +1,7 @@
 <template>
-    <div class="flex justify-content-between">
+  <PvConfirmDialog/>
+  <PvToast/>
+    <div class="flex justify-content-between mt-1">
       <div @click="home">
         <img  src="https://www.turkuvazinovasyon.com/img/onlylogo.svg">
       </div>
@@ -17,6 +19,7 @@
           <i class="pi pi-home"/>
           <span>Ana Sayfa</span>
         </template>
+        <dashboard-view></dashboard-view>
       </TabPanel>
 
       <TabPanel>
@@ -26,7 +29,6 @@
         </template>
         <customer-view/>
       </TabPanel>
-
       </TabView>
 
    </div>
@@ -36,13 +38,12 @@
 <script>
 import customerView from "@/views/CustomerView";
 import router from "@/router";
-
-
+import DashboardView from "@/views/DashboardView";
 export default {
   name: 'TabViewComp',
 
   components:{
-    customerView,
+    customerView,DashboardView
   },
   setup(){
       const logout=()=>{

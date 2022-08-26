@@ -21,13 +21,10 @@ const router = createRouter({
   routes
 })
 
-
 router.beforeEach((to, from, next) => {
   let user=localStorage.getItem("user-info")
   if (to.name !== 'LoginComp' && !user) next({ name: 'LoginComp' })
   else next()
 })
-
-
 
 export default router

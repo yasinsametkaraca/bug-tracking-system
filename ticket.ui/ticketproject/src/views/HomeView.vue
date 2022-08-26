@@ -3,8 +3,6 @@
     <router-view/>
     <tab-view-comp/>
   </div>
-
-
 </template>
 
 <script>
@@ -15,11 +13,8 @@ export default {
   name: 'HomeView',
   components: {
     TabViewComp
-
   },
   setup() {
-
   }
 }
-
 </script>
