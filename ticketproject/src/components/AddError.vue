@@ -111,7 +111,7 @@ export default {
         "ErrorTitle": errorList.value.errorTitle,
         "CustomerId": localStorage.getItem('user-info')
       }
-      console.log("errorİnfo",errorInfo)
+      console.log("errorinfo",errorInfo)
       if (props.processType === 1) {
         RequestCustomerService.addRequest(errorInfo)
             .then((response)=>{

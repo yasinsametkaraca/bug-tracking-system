@@ -13,7 +13,7 @@
         </div>
       </template>
       <template #content>
-        <p>5</p>
+        <p>{{ waitingcount }}</p>
       </template>
     </PvCard>
     <PvCard class="mr-5" style="width: 25rem; margin-bottom: 2em">
@@ -28,7 +28,7 @@
         </div>
       </template>
       <template #content>
-        <p>5</p>
+        <p>{{workingcount}}</p>
       </template>
     </PvCard>
     <PvCard class="mr-5" style="width: 25rem; margin-bottom: 2em">
@@ -58,7 +58,7 @@
         </div>
       </template>
       <template #content>
-        <p>3</p>
+        <p>{{ runningtestcount }}</p>
       </template>
     </PvCard>
     <PvCard class="" style="width: 25rem; margin-bottom: 2em">
@@ -73,7 +73,7 @@
         </div>
       </template>
       <template #content>
-        <p>4</p>
+        <p>{{finishedcount}}</p>
       </template>
     </PvCard>
    </div>
@@ -101,39 +101,50 @@
 
 <script>
 import axios from "axios";
-import {onMounted,ref} from "vue";
+import { onMounted, ref} from "vue";
 export default {
 name:"DashboardView",
   setup(){
+    const waitingcount = ref(0)
+    const workingcount = ref(0)
     const upgradingcount = ref(0)
+    const runningtestcount = ref(0)
+    const finishedcount = ref(0)
     const errorStatus=[]
+    const errorStatusGroup=ref()
+
     const getErrors = () => {
       axios.get('data/data.json')
           .then((res) => {
             for(let i in res.data.data ) {
               errorStatus[i] = res.data.data[i].status;
-              if(errorStatus[i]=='upgrading'){
-                upgradingcount.value++
-              }
-            }
-            console.log(upgradingcount.value)
-            console.log("errorStatus.value", errorStatus)
+            }console.log("errorStatus.value", errorStatus)
+
+            errorStatusGroup.value = errorStatus.reduce((a, c) => (a[c] = (a[c] || 0) + 1, a), Object.create(null));
+            console.log("reduce",errorStatusGroup.value)
+            waitingcount.value=errorStatusGroup.value.waiting
+            workingcount.value=errorStatusGroup.value.working
+            upgradingcount.value=errorStatusGroup.value.upgrading
+            runningtestcount.value=errorStatusGroup.value.runningtest
+            finishedcount.value=errorStatusGroup.value.finished
+            console.log(waitingcount.value)
           }).catch((err) => {
         console.log("error")
         console.log(err);
       })
     }
-    onMounted(()=>{
-      getErrors()
-    })
+
+
+
     const chartData = ref({
       datasets: [{
-        data: [upgradingcount.value,16,7,3,14],
+        data: [waitingcount.value,workingcount.value,upgradingcount.value,runningtestcount.value,finishedcount.value],
         backgroundColor: ["#42A5F5","#66BB6A","#FFA726","#26C6DA","#7E57C2"],
         label: 'My dataset'
       }],
       labels: ["Waiting","Working","Upgrading","Running Test","Finished"]
     });
+
 
     const chartOptions = ref(
         {
@@ -192,7 +203,11 @@ name:"DashboardView",
         }
       }
     });
-    return {getErrors,errorStatus,upgradingcount,chartData,chartOptions,chartData2,chartOptions2}
+
+    onMounted(()=>{
+      getErrors()
+    })
+    return {getErrors,errorStatus,upgradingcount,waitingcount,workingcount,runningtestcount,finishedcount,chartData,chartOptions,chartData2,chartOptions2,errorStatusGroup}
   }
 }
 </script>
