@@ -6,7 +6,9 @@ const apiPath ="http://192.168.2.17:5000/"
 
 export default {
 
-
+    getErrorListSummary(){
+        return axios.get(apiPath+'api/CustomerRequest/CustomerRequestSummary')
+    },
     getErrorListById(id){
         return axios.get(apiPath+'api/CustomerRequest/GetByCustomerById?customerId='+id)
     },
@@ -24,7 +26,7 @@ export default {
     },
     updateRequest(request){
         return axios.put(apiPath +'api/CustomerRequest/UpdateRequest',request)
+    },
 
-    }
 
 }

@@ -29,6 +29,14 @@
         </template>
         <customer-view/>
       </TabPanel>
+
+       <TabPanel>
+         <template #header>
+           <i class="pi pi-user"/>
+           <span>Hata Detay Listesi</span>
+         </template>
+         <ErrorDetailsView></ErrorDetailsView>
+       </TabPanel>
       </TabView>
 
    </div>
@@ -39,11 +47,12 @@
 import customerView from "@/views/CustomerView";
 import router from "@/router";
 import DashboardView from "@/views/DashboardView";
+import ErrorDetailsView from "@/views/ErrorDetailsView";
 export default {
   name: 'TabViewComp',
 
   components:{
-    customerView,DashboardView
+    customerView,DashboardView,ErrorDetailsView
   },
   setup(){
       const logout=()=>{

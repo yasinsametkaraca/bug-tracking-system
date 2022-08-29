@@ -12,9 +12,7 @@
                      context-menu v-model:context-menu-selection="selectedError"
                      @rowContextmenu="onRowContextMenu"
                      responsiveLayout="scroll"
-                     v-model:expandedRows="expandedRows"
-                     @rowExpand="onRowExpand"
-                     @rowCollapse="onRowCollapse">
+                     v-model:expandedRows="expandedRows">
           <template #header>
             <div class="flex justify-content-between">
               <span>
@@ -143,6 +141,9 @@ export default {
     }
 
     const getCustomerErrors = () => {
+
+
+
       const customerId=localStorage.getItem('user-info')
       console.log("customer",customerId);
       RequestCustomerService.getErrorListById(customerId)

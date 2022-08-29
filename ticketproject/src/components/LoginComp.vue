@@ -1,4 +1,5 @@
 <template>
+
   <div class="form-demo container">
     <Dialog v-model:visible="showMessage" :breakpoints="{ '960px': '80vw' }" :style="{ width: '30vw' }" position="top">
       <div class="flex align-items-center flex-column pt-6 px-3">
@@ -59,6 +60,7 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -130,10 +132,11 @@ export default {
       RequestCustomerService.customerLogin(customerLoginInfo)
           .then(response=>{
         if(response.data.success){
+          toast.add({severity: 'success', summary: 'Başarılı', detail: 'Giriş Yapıldı', life: 3000});
           localStorage.setItem('user-info', JSON.stringify(response.data.payload.customerId))
           router.push({name: 'HomeView'})
         }else{
-          toast.add({severity: 'error', summary: 'Error', detail: response.data.information, life: 3000});
+          toast.add({severity: 'error', summary: 'Error', detail: 'Kullanıcı Adı veya Parola Yanlış', life: 3000});
         }
       }).catch((er)=>{
         console.log("error",er)

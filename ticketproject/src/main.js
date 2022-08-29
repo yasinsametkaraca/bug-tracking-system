@@ -28,7 +28,8 @@ import Card from 'primevue/card';
 import Chart from 'primevue/chart';
 import ConfirmDialog from "primevue/confirmdialog";
 import ConfirmationService from "primevue/confirmationservice";
-
+import Listbox from 'primevue/listbox';
+import MultiSelect from "primevue/multiselect";
 const app = createApp(App);
 app.use(router).mount('#app');
 app.use(PrimeVue);
@@ -51,3 +52,5 @@ app.component('PvTextarea',Textarea)
 app.component('PvCard',Card)
 app.component('PvChart',Chart)
 app.component('PvConfirmDialog',ConfirmDialog)
+app.component('PvListbox',Listbox)
+app.component('PvMultiSelect',MultiSelect)

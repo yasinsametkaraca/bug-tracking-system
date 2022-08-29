@@ -10,7 +10,7 @@
       "description": "404",
       "createDate": "20.05.1998",
       "updateDate": "20.06.1998",
-      "status": "waiting"
+      "status": "runningtest"
     },
     {
       "Id": 1,
@@ -22,7 +22,7 @@
       "description": "404",
       "createDate": "20.05.1998",
       "updateDate": "20.06.1998",
-      "status": "working"
+      "status": "waiting"
     },
     {
       "Id": 1,
@@ -70,7 +70,7 @@
       "description": "404",
       "createDate": "20.05.1998",
       "updateDate": "20.06.1998",
-      "status": "waiting"
+      "status": "finished"
     },
     {
       "Id": 1,
@@ -82,7 +82,7 @@
       "description": "404",
       "createDate": "20.05.1998",
       "updateDate": "20.06.1998",
-      "status": "waiting"
+      "status": "upgrading"
     },
     {
       "Id": 1,
@@ -106,7 +106,7 @@
       "description": "404",
       "createDate": "20.05.1998",
       "updateDate": "20.06.1998",
-      "status": "waiting"
+      "status": "upgrading"
     },
     {
       "Id": 1,
@@ -118,7 +118,7 @@
       "description": "404",
       "createDate": "20.05.1998",
       "updateDate": "20.06.1998",
-      "status": "waiting"
+      "status": "runningtest"
     },
     {
       "Id": 1,
@@ -153,7 +153,7 @@
       "description": "404",
       "createDate": "20.05.1998",
       "updateDate": "20.06.1998",
-      "status": "waiting"
+      "status": "working"
     },
     {
       "Id": 1,
@@ -165,7 +165,7 @@
       "description": "404",
       "createDate": "20.05.1998",
       "updateDate": "20.06.1998",
-      "status": "waiting"
+      "status": "working"
     }
   ]
 

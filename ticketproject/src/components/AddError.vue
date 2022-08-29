@@ -9,7 +9,7 @@
           <div class="mr-4 w-full " >
             <div class="p-float-label  ">
               <PvDropdown class="w-full" :class="{'p-invalid':v$.projectId.$invalid && submitted}" id="projectId"
-                          v-model="v$.projectId.$model" :options="projectlist" optionLabel="name" optionValue="Id"/>
+                          v-model="v$.projectId.$model" :options="projectlist" optionLabel="parentDefinition" optionValue="parentId"/>
               <label for="projectId" :class="{'p-error':v$.projectId.$invalid && projectId}">Proje Id*</label>
             </div>
             <small v-if="(v$.projectId.$invalid && submitted) || v$.projectId.$pending.$response"
@@ -18,7 +18,7 @@
           <div class="w-full">
             <div class="p-float-label ">
               <PvDropdown class="w-full" :class="{'p-invalid':v$.moduleId.$invalid && submitted}" id="moduleId"
-                          v-model="v$.moduleId.$model" :options="modulelist" optionLabel="name" optionValue="Id"/>
+                          v-model="v$.moduleId.$model" :options="projectlist" optionLabel="definition" optionValue="id"/>
               <label for="moduleId" :class="{'p-error':v$.moduleId.$invalid && moduleId}">Modül Id*</label>
             </div>
             <small v-if="(v$.moduleId.$invalid && submitted) || v$.moduleId.$pending.$response"
@@ -61,10 +61,11 @@
 import {required} from "@vuelidate/validators";
 import {useVuelidate} from "@vuelidate/core";
 import {onMounted, ref} from "vue";
-import {projectId} from "@/list";
-import {moduleId} from "@/list";
+/*import {projectId} from "@/list";
+import {moduleId} from "@/list";*/
 import RequestCustomerService from "@/service/RequestCustomerService";
 import {useToast} from "primevue/usetoast";
+import RequestProject from "@/service/RequestProject";
 
 export default {
   components: {},
@@ -94,9 +95,13 @@ export default {
       projectId: {required},
       moduleId: {required},
     };
+
     const submitted = ref(false);
     const v$ = useVuelidate(rules, errorList);
     const toast = useToast()
+    const projectlist = ref();
+    const modulelist = ref();
+
 /////////////////////////////add error//////////////////////////////////////////////////////////////////
     const addorupdateError = (isFormValid) => {
       submitted.value = true;
@@ -109,7 +114,7 @@ export default {
         "ModuleId": errorList.value.moduleId,
         "ErrorDescription": errorList.value.errorDescription,
         "ErrorTitle": errorList.value.errorTitle,
-        "CustomerId": localStorage.getItem('user-info')
+        "CustomerId": localStorage.getItem('user-info'),
       }
       console.log("errorinfo",errorInfo)
       if (props.processType === 1) {
@@ -139,14 +144,28 @@ export default {
             }
           })
     }
+
+    const getProjectList=()=>{
+      RequestProject.getProjectSummary()
+          .then((response)=>{
+            if(response.data.success) {
+              console.log("response proje", response);
+              projectlist.value = response.data.payload
+            }
+          }).catch((error)=>{
+            console.log("error project list",error)
+      })
+
+    }
+
     onMounted(async () => {
+      getProjectList()
       console.log(errorList.value)
       if (props.processType === 1)
         return;
       await getErrorById()
     })
-    const projectlist = ref(projectId);
-    const modulelist = ref(moduleId);
+
 
     return {
       errorList,projectlist,v$,submitted,modulelist,addorupdateError
