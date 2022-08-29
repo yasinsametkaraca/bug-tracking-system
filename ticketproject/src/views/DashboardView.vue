@@ -20,7 +20,7 @@
       <template #title>
         <div class="title">
           <div>
-            <h3 class="">Working</h3>
+            <h3 class="text-green-500">Working</h3>
           </div>
           <div class="flex justify-content-center mt-3">
             <img src="../assets/working.png" style="height: 3rem" />
@@ -35,7 +35,7 @@
       <template #title>
         <div class="title">
           <div>
-            <h3>Upgrading</h3>
+            <h3 class="text-yellow-500" >Upgrading</h3>
           </div>
           <div class="flex justify-content-center mt-3">
             <img src="../assets/upgrading.png" style="height: 3rem" />
@@ -50,7 +50,7 @@
       <template #title>
         <div class="title">
           <div>
-            <h3>Running Test</h3>
+            <h3 class="text-teal-300" >Running Test</h3>
           </div>
           <div class="flex justify-content-center mt-3">
             <img src="../assets/testing.png" style="height: 3rem" />
@@ -65,7 +65,7 @@
       <template #title>
         <div class="title">
           <div>
-            <h3>Finishing</h3>
+            <h3 class="text-purple-700" >Finishing</h3>
           </div>
           <div class="flex justify-content-center mt-3">
             <img src="../assets/finishing.png" style="height: 3rem" />
@@ -113,7 +113,7 @@
 <script>
 
 import { onMounted, ref, computed} from "vue";
-import RequestProject from "@/service/RequestProject";
+import RequestProjectService from "@/service/RequestProjectService";
 import RequestCustomerService from "@/service/RequestCustomerService";
 export default {
 name:"DashboardView",
@@ -153,7 +153,7 @@ name:"DashboardView",
       )};
 
     const getProjectList=()=>{
-      RequestProject.getProjectSummary()
+      RequestProjectService.getProjectSummary()
           .then((response)=>{
             if(response.data.success) {
               console.log("response proje", response);

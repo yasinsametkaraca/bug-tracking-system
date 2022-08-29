@@ -65,7 +65,7 @@ import {onMounted, ref} from "vue";
 import {moduleId} from "@/list";*/
 import RequestCustomerService from "@/service/RequestCustomerService";
 import {useToast} from "primevue/usetoast";
-import RequestProject from "@/service/RequestProject";
+import RequestProjectService from "@/service/RequestProjectService";
 
 export default {
   components: {},
@@ -146,7 +146,7 @@ export default {
     }
 
     const getProjectList=()=>{
-      RequestProject.getProjectSummary()
+      RequestProjectService.getProjectSummary()
           .then((response)=>{
             if(response.data.success) {
               console.log("response proje", response);

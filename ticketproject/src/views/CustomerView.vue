@@ -119,6 +119,7 @@ export default {
     const onRowExpand = (event) => {
       toast.add({severity: 'info', summary: 'Hata Açıklaması Açıldı', detail: event.data.name, life: 3000});
     };
+
     const onRowCollapse = (event) => {
       toast.add({severity: 'success', summary: 'Hata Açıklaması Kapandı', detail: event.data.name, life: 3000});
     };
@@ -141,8 +142,6 @@ export default {
     }
 
     const getCustomerErrors = () => {
-
-
 
       const customerId=localStorage.getItem('user-info')
       console.log("customer",customerId);

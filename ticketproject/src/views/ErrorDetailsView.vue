@@ -55,6 +55,7 @@ export default {
 
     const errorList=ref()
     const getCustomerErrorDetails=()=>{
+
         UserRequestService.getErrorDetailSummary()
             .then((response)=>{
               if(response.data.success){
