@@ -1,7 +1,7 @@
 <template>
   <PvConfirmDialog/>
   <PvToast/>
-    <div class="flex justify-content-between mt-1">
+    <div class="flex justify-content-between m-2">
       <div @click="home">
         <img  src="https://www.turkuvazinovasyon.com/img/onlylogo.svg">
       </div>
