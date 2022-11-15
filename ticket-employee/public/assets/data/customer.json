@@ -1,0 +1,88 @@
+{
+  "customer": [
+      {
+          "Id": 1,
+          "CustomerName": "Firma1",
+          "CustomerEmail": "firma1@gmail.com",
+          "CustomerPhone": "352569156",
+          "CustomerDegree": "Yönetici"
+      },
+      {
+          "Id": 2,
+          "CustomerName": "Firma2",
+          "CustomerEmail": "firma2@gmail.com",
+          "CustomerPhone": "352569122",
+          "CustomerDegree": "Yönetici"
+      },
+      {
+          "Id": 3,
+          "CustomerName": "Firma3",
+          "CustomerEmail": "firma3@gmail.com",
+          "CustomerPhone": "352569146",
+          "CustomerDegree": "Yönetici"
+      },
+      {
+          "Id": 4,
+          "CustomerName": "Firma4",
+          "CustomerEmail": "firma4@gmail.com",
+          "CustomerPhone": "352569158",
+          "CustomerDegree": "Yönetici"
+      },
+      {
+          "Id": 5,
+          "CustomerName": "Firma5",
+          "CustomerEmail": "firma5@gmail.com",
+          "CustomerPhone": "352569169",
+          "CustomerDegree": "Yönetici"
+      },
+      {
+          "Id": 6,
+          "CustomerName": "Firma6",
+          "CustomerEmail": "firma6@gmail.com",
+          "CustomerPhone": "352569156",
+          "CustomerDegree": "Yönetici"
+      },
+      {
+          "Id": 7,
+          "CustomerName": "Firma7",
+          "CustomerEmail": "firma7@gmail.com",
+          "CustomerPhone": "352569156",
+          "CustomerDegree": "Yönetici"
+      },
+      {
+          "Id": 8,
+          "CustomerName": "Firma8",
+          "CustomerEmail": "firma8@gmail.com",
+          "CustomerPhone": "352569156",
+          "CustomerDegree": "Yönetici"
+      },
+      {
+          "Id": 9,
+          "CustomerName": "Firma9",
+          "CustomerEmail": "firma9@gmail.com",
+          "CustomerPhone": "352569156",
+          "CustomerDegree": "Yönetici"
+      },
+      {
+          "Id": 10,
+          "CustomerName": "Firma10",
+          "CustomerEmail": "firma10@gmail.com",
+          "CustomerPhone": "352569156",
+          "CustomerDegree": "Yönetici"
+      },
+      {
+          "Id": 11,
+          "CustomerName": "Firma11",
+          "CustomerEmail": "firma11@gmail.com",
+          "CustomerPhone": "352569156",
+          "CustomerDegree": "Yönetici"
+      },
+      {
+          "Id": 12,
+          "CustomerName": "Firma12",
+          "CustomerEmail": "firma12@gmail.com",
+          "CustomerPhone": "352569156",
+          "CustomerDegree": "Yönetici"
+      }
+  ]
+}

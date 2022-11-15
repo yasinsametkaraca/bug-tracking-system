@@ -1,0 +1,33 @@
+{
+  "users":[
+    {
+      "Id": 1,
+      "CompanyName": "Deneme1",
+      "CompanyPhone": "545661",
+      "CompanyEmail": "deneme1@gmail.com",
+      "Password": "1234"
+    },
+    {
+      "Id": 2,
+      "CompanyName": "Deneme2",
+      "CompanyPhone": "545661",
+      "CompanyEmail": "deneme2@gmail.com",
+      "Password": "1234"
+    },
+    {
+      "Id": 3,
+      "CompanyName": "Deneme3",
+      "CompanyPhone": "545661",
+      "CompanyEmail": "deneme3@gmail.com",
+      "Password": "1234"
+    },
+    {
+      "Id": 4,
+      "CompanyName": "Deneme4",
+      "CompanyPhone": "545661",
+      "CompanyEmail": "deneme4@gmail.com",
+      "Password": "1234"
+    }
+
+  ]
+}

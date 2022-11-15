@@ -28,5 +28,4 @@ export default {
         return axios.put(apiPath +'api/CustomerRequest/UpdateRequest',request)
     },
 
-
 }
